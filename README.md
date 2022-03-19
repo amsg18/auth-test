@@ -80,8 +80,6 @@ Se crean funciones para encriptar y comparar los hash con PassService-> segunda 
 Se crean con jwt funciones para crear,comparar y decodificar tokens -> tercera prueba(04_jwt-text.js)
 
 
-hash no se decodifica
-token si que se puede convertir en contraseña
 
 
 
