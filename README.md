@@ -32,10 +32,7 @@ Ver **Deployment** para conocer cómo desplegar el proyecto.
 	-Visual Studio Code más plugins para Node, JS y TS.
 	-Postman
 	-NodeJs- node y npm
-	-Git, con una cuenta con un repositorio en GitHub o bitbacket
-	-MongoDB
-	-El paquete CORS
-
+	
 Para comprobar los datos de la máquina virtual abrimos una terminal con 
 ```
 <Ctrl+Alt+T>
@@ -46,36 +43,54 @@ $ df -h
 
 ### Instalación 🔧
 
-Instalaremos:
 	-npm bcrypt, paquete de javascript que permite utilizar la función de hashing de contraseña.
+	-librería moment
+	-librería jwt-simple, para tratar los token
 	
-	NPM bcrypt
+· Instalación npm bcrypt
 ```
-	npm i -S bcrypt
+npm i -S bcrypt
 ```
 
-
-librería moment
+· Instalación librería moment
+```
 npm i -S moment
+```
 	
-
+· Instalación jwt-simple
+```
+npm i -S jwt-simple
+```
 ## Ejecutando las pruebas ⚙️
+Tenemos tres pruebas una realizada con solo con
+En la primera se utiliza un hash para comprobar al usuario.
 
+En la segunda prueba se utiliza PassService y hash para comprobar al usuario.
+
+En la tercera prueba se utiliza el jwt para crear y decodificar el token.
 
 
 ### Analice las pruebas end-to-end 🔩
+En las pruebas se comprobando qué sucede si se le introduce un token o un hash erróneo. 
+
+Se generará un hash con salt o de manera directa y asícrona  y se comparará si se le pasa el hash erróneo o el correcto-> en la primera prueba( 01_bcrypt.js).
+
+Se crean funciones para encriptar y comparar los hash con PassService-> segunda prueba (03_pass-test.js)
+
+Se crean con jwt funciones para crear,comparar y decodificar tokens -> tercera prueba(04_jwt-text.js)
+
+
+hash no se decodifica
+token si que se puede convertir en contraseña
+
+
 
 ## Despliegue 📦
-
+Se tendrá que clonar el repositorio con git clone https://github.com/amsg18/api-rest.git
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-postman, visual studio
-
-* [Postman](https://www.postman.com/) - Plataforma API.
 * [Visual Studio](https://code.visualstudio.com/) - Editor de texto
-* [Mongodb](https://www.mongodb.com/) - Base de datos utilizada
 
 
 
